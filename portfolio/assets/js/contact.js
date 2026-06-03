@@ -51,14 +51,28 @@ async function submitContactForm() {
       }),
     });
 
-    const result = await response.json();
+    // Read raw response first
+    const text = await response.text();
+
+    console.log("Server Response:");
+    console.log(text);
+
+    let result;
+
+    try {
+      result = JSON.parse(text);
+    } catch {
+      throw new Error(text);
+    }
 
     if (!response.ok) {
       throw new Error(result.error || "Failed to send.");
     }
 
     showContactSuccess();
+
   } catch (err) {
+    console.error(err);
     alert(err.message);
   } finally {
     btn.disabled = false;
