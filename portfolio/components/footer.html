@@ -1,0 +1,62 @@
+<!-- ─────────────────────────────────────────────────────
+     components/footer.html
+     All personal values injected by profile.js.
+     Do NOT hardcode name, tagline, or social links here.
+───────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- Brand + socials -->
+      <div class="col-lg-4">
+        <!-- Injected by profile.js → PROFILE.footerTag -->
+        <div class="footer-brand"></div>
+        <!-- Injected by profile.js → PROFILE.tagline -->
+        <p class="footer-tagline"></p>
+        <!-- Social links built by profile.js → PROFILE.socials -->
+        <div class="social-links"></div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="col-6 col-lg-2">
+        <p style="font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem">Navigation</p>
+        <ul class="footer-nav">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Tech stack list — built by profile.js → PROFILE.techStack -->
+      <div class="col-6 col-lg-3">
+        <p style="font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem">Tech Stack</p>
+        <ul class="footer-nav footer-stack-list"></ul>
+      </div>
+
+      <!-- Availability badge -->
+      <div class="col-lg-3">
+        <p style="font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem">Availability</p>
+        <div class="availability-badge">
+          <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.4rem">
+            <span class="availability-dot"></span>
+            <!-- Injected by profile.js → PROFILE.openToWork -->
+            <span class="footer-open-to-work" style="font-size:.85rem;font-weight:600"></span>
+          </div>
+          <!-- Injected by profile.js → PROFILE.workTypes -->
+          <p class="footer-work-types" style="font-size:.8rem;color:var(--muted);margin:0"></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        <!-- Text set by profile.js → PROFILE.copyrightYear + PROFILE.name -->
+        <span class="footer-copyright"></span><span class="heart">♥</span> <span class="footer-built-in"></span>
+      </p>
+      <p style="font-family:'Fira Code',monospace;font-size:.75rem">console.log("Thanks for visiting!");</p>
+    </div>
+
+  </div>
+</footer>

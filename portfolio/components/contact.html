@@ -1,0 +1,117 @@
+<!-- ─────────────────────────────────────────────────────
+     components/contact.html
+     All contact details injected by profile.js.
+     Use data-profile="key" attributes as hooks.
+───────────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+
+    <div class="row mb-5">
+      <div class="col" data-aos="fade-up">
+        <p class="section-eyebrow">// let's connect</p>
+        <h2 class="section-title">Contact <span style="color:var(--accent)">Me</span></h2>
+        <div class="section-line"></div>
+      </div>
+    </div>
+
+    <div class="row g-4 align-items-start">
+
+      <!-- ── Contact info ──────────────────────────────── -->
+      <div class="col-lg-5" data-aos="fade-right" data-aos-duration="800">
+
+        <div class="contact-card mb-4">
+
+          <div class="contact-info-item">
+            <div class="ci-icon"><i class="fa fa-envelope"></i></div>
+            <div>
+              <div class="ci-label">Email</div>
+              <!-- Injected by profile.js → PROFILE.email -->
+              <div class="ci-value" data-profile="email"></div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-icon"><i class="fa fa-phone"></i></div>
+            <div>
+              <div class="ci-label">Phone</div>
+              <!-- Injected by profile.js → PROFILE.phone -->
+              <div class="ci-value" data-profile="phone"></div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-icon"><i class="fa fa-location-dot"></i></div>
+            <div>
+              <div class="ci-label">Location</div>
+              <!-- Injected by profile.js → PROFILE.location -->
+              <div class="ci-value" data-profile="location"></div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-icon"><i class="fa fa-globe"></i></div>
+            <div>
+              <div class="ci-label">Availability</div>
+              <!-- Injected by profile.js → PROFILE.availability -->
+              <div class="ci-value" style="color:#00e676" data-profile="availability"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Social links — built by profile.js from PROFILE.socials -->
+        <div class="contact-card">
+          <p style="font-size:.85rem;color:var(--muted);margin-bottom:1rem">Find me online</p>
+          <div class="social-links"></div>
+        </div>
+
+      </div>
+
+      <!-- ── Contact form ──────────────────────────────── -->
+      <div class="col-lg-7" data-aos="fade-left" data-aos-duration="800">
+        <div class="contact-card">
+
+          <div id="contactForm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="cName">Your Name</label>
+                  <input type="text" id="cName" placeholder="John Doe" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="cEmail">Email Address</label>
+                  <input type="email" id="cEmail" placeholder="john@email.com" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cSubject">Subject</label>
+              <input type="text" id="cSubject" placeholder="Project Discussion" />
+            </div>
+
+            <div class="form-group">
+              <label for="cMessage">Message</label>
+              <textarea id="cMessage" placeholder="Tell me about your project..."></textarea>
+            </div>
+
+            <button class="btn-submit" id="contactSubmitBtn">
+              <i class="fa fa-paper-plane me-2"></i> Send Message
+            </button>
+          </div>
+
+          <!-- Success state (hidden until form submits) -->
+          <div class="form-success" id="formSuccess">
+            <i class="fa fa-circle-check"></i>
+            <h4 style="font-weight:700;margin-bottom:.5rem">Message Sent!</h4>
+            <p style="color:var(--muted)">Thanks for reaching out. I'll get back to you shortly.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

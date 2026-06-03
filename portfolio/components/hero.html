@@ -1,0 +1,68 @@
+<!-- ─────────────────────────────────────────────────────
+     components/hero.html
+     All personal data (name, bio, stats, photo) is injected
+     by profile.js — do NOT hardcode values here.
+     To add a real photo: set PROFILE.photoSrc in profile.js.
+───────────────────────────────────────────────────── -->
+<section id="hero">
+
+  <!-- Background elements (purely decorative) -->
+  <div class="hero-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="container hero-content">
+    <div class="row align-items-center gy-5">
+
+      <!-- ── Text column ──────────────────────────────── -->
+      <div class="col-lg-7 order-2 order-lg-1">
+
+        <div data-aos="fade-up" data-aos-duration="800">
+          <!-- Text set by profile.js → PROFILE.heroBadge -->
+          <span class="hero-badge"></span>
+        </div>
+
+        <h1 class="hero-name" data-aos="fade-up" data-aos-delay="100" data-aos-duration="900">
+          Hi, I'm <span class="accent" id="hero-name-accent"></span>
+          <!-- ↑ Name set by profile.js → PROFILE.nameShort -->
+        </h1>
+
+        <!-- Typing roles injected by hero.js from CONFIG.hero.typingRoles -->
+        <div class="hero-typing" data-aos="fade-up" data-aos-delay="200">
+          <span id="typing-text"></span><span class="cursor"></span>
+        </div>
+
+        <!-- Bio set by profile.js → PROFILE.heroBio -->
+        <p class="hero-desc" data-aos="fade-up" data-aos-delay="300"></p>
+
+        <div class="d-flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="400">
+          <a href="#projects" class="btn-hero">View My Work</a>
+          <a href="#contact"  class="btn-outline-hero">Contact Me</a>
+        </div>
+
+        <!-- Stats rebuilt by profile.js from PROFILE.stats -->
+        <div class="hero-stats" data-aos="fade-up" data-aos-delay="500"></div>
+
+      </div>
+
+      <!-- ── Photo column ─────────────────────────────── -->
+      <div class="col-lg-5 order-1 order-lg-2 text-center"
+           data-aos="zoom-in" data-aos-duration="1000">
+        <!-- profile.js swaps this placeholder for a real <img> if PROFILE.photoSrc is set -->
+        <div class="hero-photo-wrap d-inline-block">
+          <div class="hero-photo-placeholder">
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll nudge -->
+  <div class="scroll-hint">
+    <div class="mouse"><div class="wheel"></div></div>
+    <span>SCROLL</span>
+  </div>
+
+</section>

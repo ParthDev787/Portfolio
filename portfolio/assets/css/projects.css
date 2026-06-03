@@ -1,0 +1,77 @@
+/* ─────────────────────────────────────────────────────
+   projects.css
+───────────────────────────────────────────────────── */
+#projects { background: var(--bg); }
+
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.35s;
+  position: relative;
+}
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), var(--glow);
+}
+
+/* Thumbnail */
+.project-thumb {
+  height: 200px;
+  background: var(--bg3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.project-thumb .thumb-icon {
+  font-size: 3rem;
+  color: var(--muted);
+  opacity: 0.4;
+  transition: all 0.4s;
+}
+
+/* Overlay on hover */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(123, 47, 255, 0.15));
+  opacity: 0;
+  transition: opacity 0.35s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-overlay .open-btn {
+  background: rgba(0, 212, 255, 0.9);
+  color: #000;
+  border: none;
+  border-radius: 50px;
+  padding: 0.6rem 1.6rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  transform: translateY(10px);
+  transition: transform 0.35s;
+}
+.project-card:hover .project-overlay          { opacity: 1; }
+.project-card:hover .project-overlay .open-btn{ transform: translateY(0); }
+.project-card:hover .thumb-icon               { transform: scale(1.2); }
+
+/* Body */
+.project-body  { padding: 1.4rem; }
+.project-tags  { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.8rem; }
+.project-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  color: var(--accent);
+  border-radius: 4px;
+  padding: 0.15rem 0.6rem;
+}
+.project-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; }
+.project-desc  { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }

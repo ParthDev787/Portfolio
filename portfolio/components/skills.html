@@ -1,0 +1,33 @@
+<!-- ─────────────────────────────────────────────────────
+     components/skills.html
+     Cards are dynamically rendered by assets/js/skills.js.
+     Edit skill data in assets/js/config.js.
+───────────────────────────────────────────────────── -->
+<section id="skills">
+
+  <!-- SVG gradient definition used by skill rings -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="skillGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%"   stop-color="#00d4ff"/>
+        <stop offset="100%" stop-color="#7b2fff"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div class="container">
+
+    <!-- Section header -->
+    <div class="row mb-5">
+      <div class="col" data-aos="fade-up">
+        <p class="section-eyebrow">// what I work with</p>
+        <h2 class="section-title">Technical <span style="color:var(--accent)">Skills</span></h2>
+        <div class="section-line"></div>
+      </div>
+    </div>
+
+    <!-- Cards injected here by skills.js -->
+    <div class="row g-4" id="skills-grid"></div>
+
+  </div>
+</section>

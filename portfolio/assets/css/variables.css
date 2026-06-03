@@ -1,0 +1,35 @@
+/* ─────────────────────────────────────────────────────
+   variables.css
+   Single source of truth for all design tokens.
+   Change a value here → it updates everywhere.
+───────────────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg:      #0a0d13;
+  --bg2:     #0f1520;
+  --bg3:     #141c2e;
+  --card:    #131b2e;
+
+  /* Brand colours */
+  --accent:  #00d4ff;
+  --accent2: #7b2fff;
+
+  /* Text */
+  --text:    #e2e8f0;
+  --muted:   #8892a4;
+
+  /* Borders & effects */
+  --border:  rgba(0, 212, 255, 0.15);
+  --glow:    0 0 30px rgba(0, 212, 255, 0.25);
+
+  /* Shape */
+  --radius:  16px;
+
+  /* Typography */
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+
+  /* Transitions */
+  --transition: 0.3s ease;
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}

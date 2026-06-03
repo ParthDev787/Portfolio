@@ -1,0 +1,49 @@
+<!-- ─────────────────────────────────────────────────────
+     components/lightbox.html
+     Modal shell — populated dynamically by lightbox.js.
+───────────────────────────────────────────────────── -->
+<div class="lb-overlay" id="lbOverlay" role="dialog" aria-modal="true" aria-labelledby="lb-title">
+  <div class="lb-modal" id="lbModal">
+
+    <!-- Header -->
+    <div class="lb-header">
+      <div>
+        <div class="lb-section-title" id="lb-eyebrow"></div>
+        <h3 id="lb-title" style="font-size:1.5rem;font-weight:700;margin-bottom:.4rem"></h3>
+        <div id="lb-tags"></div>
+      </div>
+      <button class="lb-close" id="lbClose" aria-label="Close">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+
+    <!-- Body -->
+    <div class="lb-body">
+      <div class="lb-thumb" id="lb-thumb"></div>
+
+      <div class="row g-4">
+
+        <div class="col-md-7">
+          <p class="lb-section-title">ABOUT</p>
+          <p id="lb-desc" style="color:var(--muted);line-height:1.75;font-size:.95rem"></p>
+
+          <p class="lb-section-title mt-3">KEY FEATURES</p>
+          <div id="lb-features"></div>
+        </div>
+
+        <div class="col-md-5">
+          <p class="lb-section-title">TECH STACK</p>
+          <div id="lb-stack" style="margin-bottom:1.5rem"></div>
+
+          <p class="lb-section-title">ROLE</p>
+          <p id="lb-role" style="color:var(--muted);font-size:.9rem"></p>
+
+          <p class="lb-section-title mt-3">STATUS</p>
+          <p id="lb-status"></p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

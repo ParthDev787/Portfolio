@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Portfolio</title>
+
+  <!-- Third-party CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="assets/css/variables.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/navbar.css" />
+  <link rel="stylesheet" href="assets/css/hero.css" />
+  <link rel="stylesheet" href="assets/css/skills.css" />
+  <link rel="stylesheet" href="assets/css/projects.css" />
+  <link rel="stylesheet" href="assets/css/lightbox.css" />
+  <link rel="stylesheet" href="assets/css/contact.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+</head>
+<body>
+
+  <!-- ─── COMPONENTS ─────────────────────────────── -->
+  <!-- Each section is loaded from its own HTML file  -->
+  <div id="root-navbar"></div>
+  <div id="root-hero"></div>
+  <div id="root-skills"></div>
+  <div id="root-projects"></div>
+  <div id="root-lightbox"></div>
+  <div id="root-contact"></div>
+  <div id="root-footer"></div>
+
+  <!-- ─── SCRIPTS ──────────────────────────────────── -->
+  <!-- Third-party -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <!-- App config / data (load first) -->
+  <script src="assets/js/profile.js"></script>  <!-- ← personal data: name, email, socials… -->
+  <script src="assets/js/config.js"></script>   <!-- ← skills & projects data -->
+
+  <!-- Component logic -->
+  <script src="assets/js/loader.js"></script>      <!-- Loads HTML partials -->
+  <script src="assets/js/skills.js"></script>
+  <script src="assets/js/projects.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+  <script src="assets/js/hero.js"></script>
+  <script src="assets/js/contact.js"></script>
+  <script src="assets/js/main.js"></script>        <!-- Init / orchestration -->
+
+</body>
+</html>
