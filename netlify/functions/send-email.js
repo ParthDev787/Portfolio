@@ -3,17 +3,17 @@ const { Resend } = require("resend");
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 exports.handler = async (event) => {
-  try {
-    if (event.httpMethod !== "POST") {
-      return {
-        statusCode: 405,
-        body: JSON.stringify({
-          success: false,
-          error: "Method not allowed",
-        }),
-      };
-    }
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({
+        success: false,
+        error: "Method not allowed",
+      }),
+    };
+  }
 
+  try {
     const { name, email, subject, message } = JSON.parse(event.body);
 
     if (!name || !email || !message) {
@@ -21,7 +21,7 @@ exports.handler = async (event) => {
         statusCode: 400,
         body: JSON.stringify({
           success: false,
-          error: "Missing required fields",
+          error: "All required fields must be filled.",
         }),
       };
     }
@@ -29,10 +29,10 @@ exports.handler = async (event) => {
     console.log("RESEND KEY EXISTS:", !!process.env.RESEND_API_KEY);
     console.log("EMAIL_USER:", process.env.EMAIL_USER);
 
-    // Email sent to you
-    const ownerMail = await resend.emails.send({
-      from: "Parth Patel <onboarding@resend.dev>", // Change after domain verification
-      to: [process.env.EMAIL_USER],
+    // Send email to site owner
+    const ownerResponse = await resend.emails.send({
+      from: "Portfolio Contact <onboarding@resend.dev>",
+      to: process.env.EMAIL_USER,
       replyTo: email,
       subject: subject || `Portfolio Contact From ${name}`,
       html: `
@@ -41,44 +41,62 @@ exports.handler = async (event) => {
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
 
+        <p><strong>Subject:</strong> ${subject || "No Subject"}</p>
+
         <h3>Message</h3>
         <p>${message}</p>
       `,
     });
 
-    console.log("Owner Email:", ownerMail);
+    console.log(
+      "OWNER RESPONSE:",
+      JSON.stringify(ownerResponse, null, 2)
+    );
 
-    // Auto reply to visitor
-    const visitorMail = await resend.emails.send({
-      from: "Parth Patel <onboarding@resend.dev>", // Change after domain verification
-      to: [email],
-      subject: "Thank you for contacting me",
-      html: `
-        <h2>Hello ${name},</h2>
+    // Auto-reply
+    try {
+      const visitorResponse = await resend.emails.send({
+        from: "Portfolio Contact <onboarding@resend.dev>",
+        to: email,
+        subject: "Thank you for contacting me",
+        html: `
+          <h2>Hello ${name},</h2>
 
-        <p>Thank you for contacting me through my portfolio website.</p>
+          <p>
+            Thank you for contacting me through my portfolio website.
+          </p>
 
-        <p>
-          I have received your message successfully and will get back to you as soon as possible.
-        </p>
+          <p>
+            I have received your message successfully and will get back to you soon.
+          </p>
 
-        <br>
+          <br>
 
-        <p>
-          Best Regards,<br>
-          Parth Patel<br>
-          Full Stack Developer
-        </p>
-      `,
-    });
+          <p>
+            Regards,<br>
+            Parth Patel
+          </p>
+        `,
+      });
 
-    console.log("Visitor Email:", visitorMail);
+      console.log(
+        "VISITOR RESPONSE:",
+        JSON.stringify(visitorResponse, null, 2)
+      );
+    } catch (autoReplyError) {
+      console.error(
+        "AUTO REPLY FAILED:",
+        JSON.stringify(autoReplyError, null, 2)
+      );
+
+      // Don't fail entire request
+    }
 
     return {
       statusCode: 200,
       body: JSON.stringify({
         success: true,
-        message: "Emails sent successfully",
+        message: "Message sent successfully",
       }),
     };
   } catch (error) {
@@ -91,7 +109,8 @@ exports.handler = async (event) => {
       statusCode: 500,
       body: JSON.stringify({
         success: false,
-        error: error.message || "Failed to send email",
+        error:
+          error.message || "Failed to send email",
       }),
     };
   }
