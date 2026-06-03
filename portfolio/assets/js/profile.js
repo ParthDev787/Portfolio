@@ -4,7 +4,7 @@ const PROFILE = Object.freeze({
   name:        'Parth Prajapati',
   nameShort:   'Parth',               // used in greetings: "Hi, I'm {nameShort}"
   brandTag:    'dev.portfolio',       // navbar brand  →  < dev.portfolio />
-  footerTag:   'ParthPrajapati',      // footer brand  →  <ParthPrajapati />
+  footerTag:   'Parth Prajapati',      // footer brand  →  <ParthPrajapati />
 
   /* ── Role / tagline ─────────────────────────────────────── */
   tagline:     'Full-Stack Developer · .NET & Angular Specialist',
@@ -12,7 +12,7 @@ const PROFILE = Object.freeze({
   heroBadge:   '✦ Available for Hire',
 
   /* ── Contact details ────────────────────────────────────── */
-  email:       'parth@email.com',
+  email:       'parth.787.p@email.com',
   phone:       '+91 8140249043',
   location:    'Surat, Gujarat, India',
   availability:'Open to Opportunities',  // shown in contact section
@@ -21,12 +21,12 @@ const PROFILE = Object.freeze({
 
   /* ── Social links (set href to '#' to hide) ─────────────── */
   socials: [
-    { icon: 'fab fa-github',        href: '#',  title: 'GitHub'         },
-    { icon: 'fab fa-linkedin-in',   href: '#',  title: 'LinkedIn'       },
-    { icon: 'fab fa-x-twitter',     href: '#',  title: 'Twitter / X'    },
-    { icon: 'fab fa-stack-overflow',href: '#',  title: 'Stack Overflow' },
-    { icon: 'fab fa-dev',           href: '#',  title: 'Dev.to'         },
-    { icon: 'fa fa-envelope',       href: '#',  title: 'Email'          },
+    { icon: 'fab fa-github',        href: 'https://github.com/ParthDev787',  title: 'GitHub'},
+    { icon: 'fab fa-linkedin-in',   href: 'https://linkedin.com/in/parth-prajapati-20a60829b',  title: 'LinkedIn'       },
+    // { icon: 'fab fa-x-twitter',     href: 'https://twitter.com/ParthDev787',  title: 'Twitter / X'    },
+    // { icon: 'fab fa-stack-overflow',href: 'https://stackoverflow.com/users/1882461/parth-prajapati',  title: 'Stack Overflow' },
+    // { icon: 'fab fa-dev',           href: 'https://dev.to/parthdev787',  title: 'Dev.to'         },
+    { icon: 'fa fa-envelope',       href: 'mailto:parth.787.p@email.com',  title: 'Email'          },
   ],
 
   /* ── Hero stats ─────────────────────────────────────────── */
@@ -142,7 +142,7 @@ function applyProfile(data) {
 /** Build social link HTML from the socials array */
 function _buildSocialLinks(socials) {
   return socials.map(s => `
-    <a href="${s.href}" class="social-link" title="${s.title}" aria-label="${s.title}">
+    <a href="${s.href}" class="social-link" title="${s.title}" aria-label="${s.title}" target="_blank" rel="noopener noreferrer">
       <i class="${s.icon}" aria-hidden="true"></i>
     </a>`).join('');
 }
