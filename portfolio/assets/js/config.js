@@ -31,7 +31,6 @@ const CONFIG = Object.freeze({
     { name: 'JavaScript', icon: '🌐',  pct: 80, sub: 'ES6+ · DOM · Fetch API'      },
     { name: 'HTML',       icon: '🏷️',  pct: 92, sub: 'Semantic · Accessibility'    },
     { name: 'CSS',        icon: '🎨',  pct: 88, sub: 'Flexbox · Grid · Animations' },
-    { name: 'CSS',        icon: '🎨',  pct: 88, sub: 'Flexbox · Grid · Animations' },
   ],
 
   /* ── Projects ──────────────────────────────────────────── */
